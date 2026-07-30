@@ -1,0 +1,7 @@
+const Aluno = {
+  matricula: "",
+  ira: "",
+  nome: "",
+  nomesocial: "",
+  frequencia: ""
+};

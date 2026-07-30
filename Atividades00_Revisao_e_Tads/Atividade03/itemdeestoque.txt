@@ -1,0 +1,7 @@
+const ItemDeEstoque = {
+  produto: "",
+  codigo: "",
+  preco: "",
+  quantidade: "",
+  lote: ""
+};

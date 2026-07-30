@@ -1,0 +1,7 @@
+const Filme = {
+  titulo: "",
+  atores: "",
+  atrizes: "",
+  diretores: "",
+  roteiristas: ""
+};

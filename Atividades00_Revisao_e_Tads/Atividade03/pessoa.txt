@@ -1,0 +1,7 @@
+const Pessoa = {
+  nome: "",
+  idade: "",
+  cpf: "",
+  nacionalidade: "",
+  estadocivil: ""
+};

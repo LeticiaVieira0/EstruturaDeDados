@@ -1,0 +1,7 @@
+const Circulo = {
+  raio: "",
+  diametro: "",
+  pi: "",
+  area: "",
+  volume: ""
+};

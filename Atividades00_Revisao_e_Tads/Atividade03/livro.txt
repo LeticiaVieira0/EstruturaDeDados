@@ -1,0 +1,6 @@
+const Livro = {
+  titulo: "",
+  autor: "",
+  editora: "",
+  quantidadepaginas: ""
+};

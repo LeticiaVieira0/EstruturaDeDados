@@ -1,0 +1,8 @@
+const ContaBancaria = {
+  tipoconta: "",
+  titulares: "",
+  cpf: "",
+  cnpj: "",
+  saldo: "",
+  score: ""
+};
