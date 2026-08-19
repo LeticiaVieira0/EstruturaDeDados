@@ -6,19 +6,31 @@ void main() {
 
     //Entrar com o numero de elementos a se criar
     int n = 10;
+    Vetorsimples lista = new Vetorsimples(n);
+
     //Contador (deixar em 0)
     int i = 0;
 
-    while (i <= n){
+    while (i < n){
         pilha.push(random.nextInt(100));
+        lista.inserir(pilha.pop());
         i++;
         //Esta funcionando como o devido
         //System.out.println(pilha.pop());
     }
 
-    Vetorsimples lista = new Vetorsimples(10);
-    Vetorsimples.checkarDuplicata(lista.getVetor(), 67);
+//    Vetorsimples.checkarDuplicata(lista.getVetor(), 67);
 //    Vetorsimples.ordenar();
 //    Vetorsimples.inserir();
+
+
+    lista.printar();
+    System.out.println("");
+
+    lista.ordenar();
+//    System.out.println(""+lista.checkarDuplicata(1));
+    lista.printar();
+
+
 
 }
