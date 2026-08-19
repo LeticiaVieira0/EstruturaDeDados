@@ -7,45 +7,54 @@ public class Vetorsimples {
         this.contador = 0;
     }
 
-    public static Boolean checkarDuplicata(int[] lista, int elemento) {
-        Boolean duplicata = false;
+    public Boolean checkarDuplicata(int elemento) {
         int low = 0;
-        int high = lista.length;
+        int high = vetor.length -1;
 
         while (low <= high){
             int mid = low + ((high - low) / 2);
-
-            if(lista[mid] < elemento){
+            if(vetor[mid] < elemento){
                 low = mid + 1;
-            } else if (lista[mid] > elemento){
+            } else if (vetor[mid] > elemento){
                 high = mid -1;
-            } else if (lista[mid] == elemento){
-                duplicata = true;
+            } else {
+                return true;
             }
         }
 
-        return duplicata;
+        return false;
     }
 
     public int[] getVetor() {
         return vetor;
     }
 
-    public static int[] ordenar(int[] lista){
+    //OK
+    public void ordenar(){
         int temp = 0;
-        for(int i =0; i<lista.length;i++){
-            for(int j = i+1; j<lista.length;j++){
-                if (lista[i] > lista[j]){
-                    temp = lista[i];
-                    lista[i] = lista[j];
-                    lista[j] = temp;
+        for(int i =0; i<vetor.length;i++){
+            for(int j = i+1; j<vetor.length;j++){
+                if (vetor[i] > vetor[j]){
+                    temp = vetor[i];
+                    vetor[i] = vetor[j];
+                    vetor[j] = temp;
                 }
             }
         }
-        return lista;
     }
 
+    public void inserir(int elemento){
+        vetor[contador] = elemento;
 
+        contador++;
+    }
+
+    //OK
+    public void printar(){
+        for (int num : vetor){
+            System.out.println(""+num);
+        }
+    }
 
 
 }
