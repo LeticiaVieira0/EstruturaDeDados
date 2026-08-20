@@ -12,24 +12,18 @@ void main() {
     int i = 0;
 
     while (i < n){
-        pilha.push(random.nextInt(100));
-        lista.inserir(pilha.pop());
+        pilha.push(random.nextInt(10));
+//        System.out.println("lista.getContador(): "+lista.getContador());
+//        System.out.println("pilha.peek(): "+pilha.peek());
+
+        if (lista.checkarDuplicata(pilha.peek()) == false){
+            lista.inserir(pilha.pop());
+            lista.ordenar();
+        }else if (lista.checkarDuplicata(pilha.peek()) == true){
+            pilha.pop();
+        }
         i++;
-        //Esta funcionando como o devido
-        //System.out.println(pilha.pop());
+
     }
-
-//    Vetorsimples.ordenar();
-//    Vetorsimples.inserir();
-
-
     lista.printar();
-    System.out.println("");
-
-    lista.ordenar();
-    System.out.println(""+lista.checkarDuplicata(1));
-    lista.printar();
-
-
-
 }

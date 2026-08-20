@@ -9,7 +9,11 @@ public class Vetorsimples {
 
     public Boolean checkarDuplicata(int elemento) {
         int low = 0;
-        int high = vetor.length -1;
+        int high = contador -1;
+
+//        if(contador <= vetor.length/2){
+//            return false;
+//        }
 
         while (low <= high){
             int mid = low + ((high - low) / 2);
@@ -33,8 +37,8 @@ public class Vetorsimples {
     //OK
     public void ordenar(){
         int temp = 0;
-        for(int i =0; i<vetor.length;i++){
-            for(int j = i+1; j<vetor.length;j++){
+        for(int i =0; i<contador;i++){
+            for(int j = i+1; j<contador;j++){
                 if (vetor[i] > vetor[j]){
                     temp = vetor[i];
                     vetor[i] = vetor[j];
@@ -52,10 +56,12 @@ public class Vetorsimples {
 
     //OK
     public void printar(){
-        for (int num : vetor){
-            System.out.println(""+num);
+        for (int i = 0; i < contador; i++) {
+            System.out.println(vetor[i]);
         }
     }
 
-
+    public int getContador() {
+        return contador;
+    }
 }
