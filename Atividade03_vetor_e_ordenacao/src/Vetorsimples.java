@@ -13,12 +13,13 @@ public class Vetorsimples {
 
         while (low <= high){
             int mid = low + ((high - low) / 2);
-            if(vetor[mid] < elemento){
-                low = mid + 1;
+
+            if(vetor[mid] == elemento){
+                return true;
             } else if (vetor[mid] > elemento){
                 high = mid -1;
             } else {
-                return true;
+                low = mid + 1;
             }
         }
 

@@ -19,7 +19,6 @@ void main() {
         //System.out.println(pilha.pop());
     }
 
-//    Vetorsimples.checkarDuplicata(lista.getVetor(), 67);
 //    Vetorsimples.ordenar();
 //    Vetorsimples.inserir();
 
@@ -28,7 +27,7 @@ void main() {
     System.out.println("");
 
     lista.ordenar();
-//    System.out.println(""+lista.checkarDuplicata(1));
+    System.out.println(""+lista.checkarDuplicata(1));
     lista.printar();
 
 
