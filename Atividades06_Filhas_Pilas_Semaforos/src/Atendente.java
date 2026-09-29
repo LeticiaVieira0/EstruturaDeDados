@@ -15,7 +15,7 @@ public class Atendente {
         return flag;
     }
 
-    public setFlag(boolean state){
+    public void setFlag(boolean state){
         this.flag = state;
     }
 

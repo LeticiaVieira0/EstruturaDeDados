@@ -1,4 +1,6 @@
-public class Cliente {
+//implementar comparador para poder fazer a fila
+
+public class Cliente implements Comparable<Cliente> {
     private int tempoAtendimento;
     private int id;
 
@@ -13,5 +15,14 @@ public class Cliente {
 
     public int getId() {
         return id;
+    }
+
+    public void setTempoAtendimento(int tempoAtendimento) {
+        this.tempoAtendimento = tempoAtendimento;
+    }
+
+    @Override
+    public int compareTo(Cliente o) {
+        return 0;
     }
 }
