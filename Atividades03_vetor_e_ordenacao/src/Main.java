@@ -23,7 +23,7 @@ void main() {
             pilha.pop();
         }
         i++;
-
+        System.out.println();
     }
     lista.printar();
 }

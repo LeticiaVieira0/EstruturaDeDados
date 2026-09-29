@@ -14,6 +14,7 @@ void main() {
 
     //Fila de clientes btw
     Queue<Cliente> fila = new PriorityQueue<>();
+    ArrayList<Atendente> atendentes = new ArrayList<>();
 
     // ------------------ VARIAVEL PARA ESSE TRUE -> DEADLOCK (SIM/NAO --------------------
     while (true){
@@ -31,19 +32,51 @@ void main() {
         }
 
         //Criar atendentes
-
         int nAtendentes = 2;
 
         while(nAtendentes > 0){
 
             Atendente atendente = new Atendente(idAtendente);
+            atendentes.add(atendente);
             nAtendentes -= 1;
             idAtendente -= 1;
         }
 
         //Botar os atendentes para trabalhar
         while(true){
-            
+            //True atendente pode trabalhar
+            //False atendente nao pode trabalhar
+            while (atendentes.get(0).isFlag() == true){
+               int tempo1 = fila.peek().getTempoAtendimento();
+               //.poll == .pop
+                fila.poll();
+                atendentes.get(0).setFlag(false);
+                break;
+//                continue;
+            }
+
+            while (atendentes.get(1).isFlag() == true){
+                int tempo2 = fila.peek().getTempoAtendimento();
+                fila.poll();
+                atendentes.get(1).setFlag(false);
+                break;
+            }
+
+            System.out.println("----------------------------------");
+            System.out.println("Fila de clientes: " + fila.size());
+            System.out.println("Atendente 0 ocupado por: " +tempo1+"s");
+            System.out.println("Atendente 1 ocupado por: " +tempo1+"s");
+            System.out.println("----------------------------------");
+
+            //Atendendo 1
+            Thread.sleep(tempo1*1000);
+            atendentes.get(0).setFlag(true);
+
+            Thread.sleep(tempo2*1000);
+            atendentes.get(1).setFlag(true);
+
+            //Dormindo o sistema por tempo do primeiro cliente e sugundo cliente. depois
+            //Flags sao == true
         }
 
     }
